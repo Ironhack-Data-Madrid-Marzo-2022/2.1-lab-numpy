@@ -59,7 +59,7 @@ e=a*c
 
 #13. Does e equal to a? Why or why not?
 
-print(e==a + 'porque c son 1s')
+print('porque c son 1s el resultado es el mismo')
 
 
 #14. Identify the max, min, and mean values in d. Assign those values to variables "d_max", "d_min", and "d_mean"
@@ -71,7 +71,7 @@ d_mean=np.mean(d)
 
 #15. Now we want to label the values in d. First create an empty array "f" with the same shape (i.e. 2x3x5) as d using `np.empty`.
 
-f=np.empty((2,3,5),dtype=str)
+f=np.empty((2,3,5))
 
 
 """
@@ -83,7 +83,11 @@ Assign 100 to the corresponding value(s) in f for d_max in d.
 In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
 """
-
+f[d == d_min] = 0
+f[(d > d_min) & (d < d_mean)] = 25
+f[d == d_mean] = 50
+f[(d > d_mean) & (d < d_max)] = 75
+f[d == d_max] = 100
 
 
 
@@ -121,3 +125,9 @@ array([[[ 'D',  'D',  'D',  'B',  'D'],
         [ 'B',  'D',   'A',  'D', 'D']]])
 Again, you don't need Numpy in this question.
 """
+f=f=np.empty((2,3,5),dtype=str)
+f[d == d_min] = 'A'
+f[(d > d_min) & (d < d_mean)] = 'B'
+f[d == d_mean] = 'C'
+f[(d > d_mean) & (d < d_max)] = 'D'
+f[d == d_max] = 'E'
