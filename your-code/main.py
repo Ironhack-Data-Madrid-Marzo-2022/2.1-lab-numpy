@@ -1,5 +1,6 @@
 #1. Import the NUMPY package under the name np.
 
+from re import A
 import numpy as np
 
 
@@ -93,8 +94,6 @@ In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
 """
 
-print(".-..-,lnkhgfhh.......")
-
 for i, j in enumerate(d):
         for k,l in enumerate(j):
                 for m,n in enumerate(l):
@@ -149,3 +148,14 @@ array([[[ 'D',  'D',  'D',  'B',  'D'],
         [ 'B',  'D',   'A',  'D', 'D']]])
 Again, you don't need Numpy in this question.
 """
+
+g = np.zeros((2,3,5), dtype=str)
+
+
+g[(f==0)] = 'A'
+g[(f==25)] = 'B'
+g[(f==50)] = 'C'
+g[(f==75)] = 'D'
+g[(f==100)] = 'E'
+
+print(g)
