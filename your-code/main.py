@@ -1,68 +1,86 @@
 #1. Import the NUMPY package under the name np.
 
+import numpy as np
 
 
 #2. Print the NUMPY version and the configuration.
 
-
+print(np.version.version)
 
 #3. Generate a 2x3x5 3-dimensional array with random values. Assign the array to variable "a"
 # Challenge: there are at least three easy ways that use numpy to generate random arrays. How many ways can you find?
 
-
+a = np.random.rand(2,3,5)
 
 #4. Print a.
 
-
+print(a)
 
 #5. Create a 5x2x3 3-dimensional array with all values equaling 1.
 #Assign the array to variable "b"
 
-
+b = np.ones((5,2,3), dtype=int)
 
 #6. Print b.
 
-
+print(b)
 
 #7. Do a and b have the same size? How do you prove that in Python code?
 
+print(a.size)
+print(b.size)
 
+if a.size > b.size:
+        print("a has greater size than b")
+elif b.size > a.size:
+        print("b has greater size than a")
+else:
+        print("a and b have the same size")
 
 
 #8. Are you able to add a and b? Why or why not?
 
-
+#No se pueden sumar las matrices a y b ya que no tienen las mismas dimensiones, condicion necesaria para realizar la suma de matrices.#
 
 #9. Transpose b so that it has the same structure of a (i.e. become a 2x3x5 array). Assign the transposed array to varialbe "c".
 
+c =np.transpose(b)
 
+c = c.reshape(2,3,5)
 
 #10. Try to add a and c. Now it should work. Assign the sum to varialbe "d". But why does it work now?
 
-
+d = np.array(a)+np.array(c)
 
 #11. Print a and d. Notice the difference and relation of the two array in terms of the values? Explain.
 
+print(a)
 
+print(d)
 
+#difference of +1 between values in array a and array d 
 
 #12. Multiply a and c. Assign the result to e.
 
-
+e = np.multiply(a,c)
+print(e)
 
 #13. Does e equal to a? Why or why not?
 
-
-
+#Si, porque estamos multiplicando la a por todos numeros 1 (la matric c)
 
 #14. Identify the max, min, and mean values in d. Assign those values to variables "d_max", "d_min", and "d_mean"
 
+d_max = d.max()
 
+d_min = d.min()
+
+d_mean = d.mean()
 
 
 #15. Now we want to label the values in d. First create an empty array "f" with the same shape (i.e. 2x3x5) as d using `np.empty`.
 
-
+f = np.zeros((2,3,5), dtype=int)
 
 
 """
@@ -75,8 +93,26 @@ In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
 """
 
+print(".-..-,lnkhgfhh.......")
+
+for i, j in enumerate(d):
+        for k,l in enumerate(j):
+                for m,n in enumerate(l):
+                        if d_min<n<d_mean:
+                                f[i][k][m] = 25        
+                        elif d_mean<n< d_max:
+                               f[i][k][m] = 75
+                        elif n == d_mean:
+                                f[i][k][m] = 50
+                        elif n == d_min:
+                                f[i][k][m] = 75
+                        else:
+                                f[i][k][m] = 100
 
 
+print(d)
+
+print(f)
 
 """
 #17. Print d and f. Do you have your expected f?
@@ -88,6 +124,7 @@ array([[[1.85836099, 1.67064465, 1.62576044, 1.40243961, 1.88454931],
        [[1.44747908, 1.31673383, 1.02000951, 1.52218947, 1.97066381],
         [1.79129243, 1.74983003, 1.96028037, 1.85166831, 1.65450881],
         [1.18068344, 1.9587381 , 1.00656599, 1.93402165, 1.73514584]]])
+
 
 Your f should be:
 array([[[ 75.,  75.,  75.,  25.,  75.],
