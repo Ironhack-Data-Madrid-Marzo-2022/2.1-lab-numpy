@@ -134,10 +134,6 @@ print(d)
 
 print(f)
 
-
-
-
-
 """
 #18. Bonus question: instead of using numbers (i.e. 0, 25, 50, 75, and 100), how to use string values 
 ("A", "B", "C", "D", and "E") to label the array elements? You are expecting the result to be:
@@ -150,3 +146,22 @@ array([[[ 'D',  'D',  'D',  'B',  'D'],
         [ 'B',  'D',   'A',  'D', 'D']]])
 Again, you don't need Numpy in this question.
 """
+g = np.empty([2,3,5], dtype=str)
+
+for i,j in enumerate(f):
+    
+    for k,l in enumerate(j):
+        
+        for m,n in enumerate(l):                      
+
+                if n==0: g[i][k][m] = 'A'
+
+                elif n==25: g[i][k][m] = 'B'
+
+                elif n==50: g[i][k][m] = 'C'
+
+                elif n==75: g[i][k][m] = 'D'
+
+                elif n==100: g[i][k][m] = 'E'
+
+print(g)
