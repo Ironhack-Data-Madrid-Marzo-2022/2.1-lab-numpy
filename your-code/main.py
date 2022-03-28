@@ -39,9 +39,9 @@ print(b.shape)
 
 #%%#9. Transpose b so that it has the same structure of a (i.e. become a 2x3x5 array). Assign the transposed array to varialbe "c".
 
-c=b.reshape(2,3,5)
+c=b.transpose(0,1,2)
 print(c.shape)
-print(a.shape)
+
 
 #%%#10. Try to add a and c. Now it should work. Assign the sum to varialbe "d". But why does it work now?
 
