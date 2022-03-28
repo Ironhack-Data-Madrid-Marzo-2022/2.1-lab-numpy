@@ -98,7 +98,9 @@ d_mean=np.mean(d)
 
 #15. Now we want to label the values in d. First create an empty array "f" with the same shape (i.e. 2x3x5) as d using `np.empty`.
 
-f=np.empty([2,3,5])
+f=np.zeros([2,3,5])
+
+print(f)
 
 
 
@@ -113,6 +115,35 @@ Assign 100 to the corresponding value(s) in f for d_max in d.
 In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
 """
+for i, o in enumerate(d):
+        for j, l in enumerate(o):
+                for k, p in enumerate(l):
+
+                        n=d[i][j][k]
+
+                        if n==d_min:
+
+                                f1=0
+                        
+                        elif n>d_min and n<d_mean:
+                                f1=25
+
+                        elif n==d_mean:
+                                f1=50
+                        
+                        elif n<d_max:
+                                f1=75
+                        
+                        elif n==d_max: f1=100
+
+                        f[i][j][k]=f1
+                                
+                                
+print(f)
+
+
+
+                                
 
 
 
@@ -151,3 +182,30 @@ array([[[ 'D',  'D',  'D',  'B',  'D'],
         [ 'B',  'D',   'A',  'D', 'D']]])
 Again, you don't need Numpy in this question.
 """
+h=np.zeros([2,3,5], dtype=str)
+
+for i, o in enumerate(d):
+        for j, l in enumerate(o):
+                for k, p in enumerate(l):
+
+                        n=d[i][j][k]
+
+                        if n==d_min:
+
+                                f1="A"
+                        
+                        elif n>d_min and n<d_mean:
+                                f1="B"
+
+                        elif n==d_mean:
+                                f1="C"
+                        
+                        elif n<d_max:
+                                f1="D"
+                        
+                        elif n==d_max: f1="E"
+
+
+                        h[i][j][k]=f1         
+                                
+print(h)
