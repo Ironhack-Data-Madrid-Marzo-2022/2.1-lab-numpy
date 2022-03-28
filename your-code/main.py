@@ -1,65 +1,82 @@
+print("################-1-#####################")
 #1. Import the NUMPY package under the name np.
 
+import numpy as np
 
-
+print("####################-2-#####################")
 #2. Print the NUMPY version and the configuration.
 
+print(np.__version__)
 
 
+print("#####################-3-####################")
 #3. Generate a 2x3x5 3-dimensional array with random values. Assign the array to variable "a"
 # Challenge: there are at least three easy ways that use numpy to generate random arrays. How many ways can you find?
 
+a = np.random.random((2,3,5))
+print(a)
 
-
+print("#########################-4-################")
 #4. Print a.
 
-
-
+print(a)
+print("######################-5-###################")
 #5. Create a 5x2x3 3-dimensional array with all values equaling 1.
 #Assign the array to variable "b"
 
-
-
+c=np.random.random((5,2,3))
+b= np.ones_like(a)      
+print(b)
+print("###################-6-#####################")
 #6. Print b.
 
-
-
+print(b)
+print("###################-7-########################")
 #7. Do a and b have the same size? How do you prove that in Python code?
 
+print(a.size)
+
+print(b.size)
 
 
-
+print("#######################-8-#####################")
 #8. Are you able to add a and b? Why or why not?
 
 
+print("No, porque son de diferente tamaño")
 
+print("##################-9-#####################")
 #9. Transpose b so that it has the same structure of a (i.e. become a 2x3x5 array). Assign the transposed array to varialbe "c".
-
-
-
+c= b.reshape([2,3,5])
+print(c)
+print("####################-10-##################")
 #10. Try to add a and c. Now it should work. Assign the sum to varialbe "d". But why does it work now?
+d = a+c
+print(d)   #Si, ahora funciona
 
-
-
+print("################-11-#######################")
 #11. Print a and d. Notice the difference and relation of the two array in terms of the values? Explain.
 
+print(a)
+print(b)
 
-
-
+print("################-12-#######################")
 #12. Multiply a and c. Assign the result to e.
+e= np.multiply(a,c)
 
+print(e)
 
-
+print("##################-13-#######################")
 #13. Does e equal to a? Why or why not?
 
+is 
 
-
-
+print("################-14-#####################")
 #14. Identify the max, min, and mean values in d. Assign those values to variables "d_max", "d_min", and "d_mean"
 
 
 
-
+print("#################-15-########################")
 #15. Now we want to label the values in d. First create an empty array "f" with the same shape (i.e. 2x3x5) as d using `np.empty`.
 
 
