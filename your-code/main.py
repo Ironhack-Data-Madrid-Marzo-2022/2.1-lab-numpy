@@ -77,31 +77,40 @@ f = np.empty((2, 3, 5))
 # In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 # Note: you don't have to use Numpy in this question.
 
-def get_value(value, d_min, d_mean, d_man):
-    # if it's larger than d_min but smaller than d_mean, 
-    # assign 25 to the corresponding value in f.
-    if value > d_min and value < d_mean:
-        return 25
-    
-    # If a value in d is larger than d_mean but smaller than d_max, 
-    # assign 75 to the corresponding value in f.
-    if value > d_mean and value < d_max:
-        return 75
-    
-    # If a value equals to d_mean, assign 50 to the corresponding value in f.
-    elif value == d_mean:
-        return 50
-    
-    elif value == d_min:
-        return 0
-    
-    else:
-        return 100   
+# =============================================================================
+# def get_value(value, d_min, d_mean, d_man):
+#     # if it's larger than d_min but smaller than d_mean, 
+#     # assign 25 to the corresponding value in f.
+#     if value > d_min and value < d_mean:
+#         return 25
+#     
+#     # If a value in d is larger than d_mean but smaller than d_max, 
+#     # assign 75 to the corresponding value in f.
+#     if value > d_mean and value < d_max:
+#         return 75
+#     
+#     # If a value equals to d_mean, assign 50 to the corresponding value in f.
+#     elif value == d_mean:
+#         return 50
+#     
+#     elif value == d_min:
+#         return 0
+#     
+#     else:
+#         return 100   
+# 
+# for m in range(d.shape[0]):
+#     for i in range(d.shape[1]):
+#         for j in range(d.shape[2]):
+#             f[m, i, j] = get_value(d[m, i, j], d_min, d_mean, d_max)
+# =============================================================================
+            
+f[d == d_min] = 0
+f[(d > d_min) & (d < d_mean)] = 25
+f[d == d_mean] = 50
+f[(d > d_mean) & (d < d_max)] = 75
+f[d == d_max] = 100
 
-for m in range(d.shape[0]):
-    for i in range(d.shape[1]):
-        for j in range(d.shape[2]):
-            f[m, i, j] = get_value(d[m, i, j], d_min, d_mean, d_max)
     
 #%% 17. Print d and f. Do you have your expected f?
 # For instance, if your d is:
@@ -135,30 +144,38 @@ print(f)
 #         [ 'B',  'D',   'A',  'D', 'D']]])
 # Again, you don't need Numpy in this question.
 
-def get_value_string(value, d_min, d_mean, d_man):
-    # if it's larger than d_min but smaller than d_mean,    
-    # assign 25 to the corresponding value in f.
-    if value > d_min and value < d_mean:
-        return 'B'
-    
-    # If a value in d is larger than d_mean but smaller than d_max, 
-    # assign 75 to the corresponding value in f.
-    if value > d_mean and value < d_max:
-        return 'D'
-    
-    # If a value equals to d_mean, assign 50 to the corresponding value in f.
-    elif value == d_mean:
-        return 'C'
-    
-    elif value == d_min:
-        return 'A'
-    
-    else:
-        return 'E'   
-
 f2 = np.empty((2, 3, 5), dtype = str)
 
-for m in range(d.shape[0]):
-    for i in range(d.shape[1]):
-        for j in range(d.shape[2]):
-            f2[m, i, j] = get_value_string(d[m, i, j], d_min, d_mean, d_max)
+# =============================================================================
+# def get_value_string(value, d_min, d_mean, d_man):
+#     # if it's larger than d_min but smaller than d_mean,    
+#     # assign 25 to the corresponding value in f.
+#     if value > d_min and value < d_mean:
+#         return 'B'
+#     
+#     # If a value in d is larger than d_mean but smaller than d_max, 
+#     # assign 75 to the corresponding value in f.
+#     if value > d_mean and value < d_max:
+#         return 'D'
+#     
+#     # If a value equals to d_mean, assign 50 to the corresponding value in f.
+#     elif value == d_mean:
+#         return 'C'
+#     
+#     elif value == d_min:
+#         return 'A'
+#     
+#     else:
+#         return 'E'   
+# 
+# for m in range(d.shape[0]):
+#     for i in range(d.shape[1]):
+#         for j in range(d.shape[2]):
+#             f2[m, i, j] = get_value_string(d[m, i, j], d_min, d_mean, d_max)
+# =============================================================================
+            
+f2[d == d_min] = 'A'
+f2[(d > d_min) & (d < d_mean)] = 'B'
+f2[d == d_mean] = 'C'
+f2[(d > d_mean) & (d < d_max)] = 'D'
+f2[d == d_max] = 'E'
