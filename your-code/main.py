@@ -69,7 +69,7 @@ print(e)
 print("##################-13-#######################")
 #13. Does e equal to a? Why or why not?
 
-
+print(e == a)
 
 print("################-14-#####################")
 #14. Identify the max, min, and mean values in d. Assign those values to variables "d_max", "d_min", and "d_mean"
@@ -132,4 +132,4 @@ array([[[ 'D',  'D',  'D',  'B',  'D'],
         [ 'D',  'D',  'D',  'D',  'D'],
         [ 'B',  'D',   'A',  'D', 'D']]])
 Again, you don't need Numpy in this question.
-"""
+"""s
