@@ -44,7 +44,8 @@ np.add(a,b)
 #%%
 #9. Transpose b so that it has the same structure of a (i.e. become a 2x3x5 array). Assign the transposed array to varialbe "c".
 
-c = b.reshape(2, 3, 5)
+c = np.transpose(b, axes=(1,2,0))
+c.shape
 
 print(c)
 #%%
@@ -57,8 +58,8 @@ d = np. add(a,c)
 #%%
 #11. Print a and d. Notice the difference and relation of the two array in terms of the values? Explain.
 
-print(a)
-print(d)
+print(a[0])
+print(d[0])
 
 #La diferencia es que en "d" está sumado el valor de la matriz de 1's y en a, no.
 
@@ -80,7 +81,7 @@ else:
 
     print("No, no es igual")
 
-# Son iguales
+# Son iguales por que estamos multiplicando x1
 #%%
 #14. Identify the max, min, and mean values in d. Assign those values to variables "d_max", "d_min", and "d_mean"
 
@@ -88,10 +89,14 @@ d_max = np.max(d)
 d_min = np.min(d)
 d_mean = np.mean(d)
 
+print(d_max)
+print(d_min)
+print(d_mean)
+
 #%%
 #15. Now we want to label the values in d. First create an empty array "f" with the same shape (i.e. 2x3x5) as d using `np.empty`.
 
-f= np.empty((2,3,5))
+f= np.empty([2,3,5])
 
 print(f)
 
@@ -107,7 +112,22 @@ Assign 100 to the corresponding value(s) in f for d_max in d.
 In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
 """
+f = []
 
+for value in d:
+
+    if d_min < d_mean:
+        f += [25]
+    if d_mean < d_max:
+        f += [75]
+    if (value == d_mean).all():
+        f += [50]
+    if (value == d_min).all():
+        f += [0]
+    if (value == d_max).all():
+        f+= [100]
+
+print(f)
 
 
 
@@ -131,7 +151,8 @@ array([[[ 75.,  75.,  75.,  25.,  75.],
         [ 75.,  75.,  75.,  75.,  75.],
         [ 25.,  75.,   0.,  75.,  75.]]])
 """
-
+print(d)
+print(f)
 
 """
 #18. Bonus question: instead of using numbers (i.e. 0, 25, 50, 75, and 100), how to use string values 
