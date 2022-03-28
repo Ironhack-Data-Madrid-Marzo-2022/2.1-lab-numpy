@@ -2,7 +2,7 @@ print("################-1-#####################")
 #1. Import the NUMPY package under the name np.
 
 import numpy as np
-
+print("Import numpy as np")
 print("####################-2-#####################")
 #2. Print the NUMPY version and the configuration.
 
@@ -69,19 +69,23 @@ print(e)
 print("##################-13-#######################")
 #13. Does e equal to a? Why or why not?
 
-is 
+
 
 print("################-14-#####################")
 #14. Identify the max, min, and mean values in d. Assign those values to variables "d_max", "d_min", and "d_mean"
-
-
-
+d_max= d.max()
+d_min= d.min()
+d_mean= d.mean()
+print("El máximo es:",d_max)
+print("El minimo es:",d_min)
+print("La media es:",d_mean)
 print("#################-15-########################")
 #15. Now we want to label the values in d. First create an empty array "f" with the same shape (i.e. 2x3x5) as d using `np.empty`.
+f = np.empty((2, 3, 5))
+print(f)
 
 
-
-
+print("#################-16-########################")
 """
 #16. Populate the values in f. For each value in d, if it's larger than d_min but smaller than d_mean, assign 25 to the corresponding value in f.
 If a value in d is larger than d_mean but smaller than d_max, assign 75 to the corresponding value in f.
@@ -93,7 +97,7 @@ Note: you don't have to use Numpy in this question.
 """
 
 
-
+print("#################-17-########################")
 
 """
 #17. Print d and f. Do you have your expected f?
